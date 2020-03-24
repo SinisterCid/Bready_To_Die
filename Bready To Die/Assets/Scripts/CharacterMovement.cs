@@ -7,6 +7,7 @@ public class CharacterMovement : MonoBehaviour
     public float speed;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
+    public float rotateSpeed;
 
     public Transform groundCheck;
     public float groundDistance;
@@ -64,7 +65,7 @@ public class CharacterMovement : MonoBehaviour
         Vector3 lookDirection = new Vector3(xRaw, 0.0f, zRaw);
         if (xRaw != 0 || zRaw != 0)
         {
-            transform.rotation = Quaternion.LookRotation(lookDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), rotateSpeed * Time.deltaTime);
         }
 
         Vector3 move = new Vector3(x, 0, z);

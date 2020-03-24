@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6517592206340857912}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   speed: 5
   gravity: -9.81
   jumpHeight: 3
+  rotateSpeed: 4
   groundCheck: {fileID: 6517592205384890733}
   groundDistance: 0.2
   groundMask:
