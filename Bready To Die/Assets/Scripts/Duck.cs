@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Duck : MonoBehaviour
 {
+    public int playerID;
     public int breadCount = 0;
 
     // Start is called before the first frame update

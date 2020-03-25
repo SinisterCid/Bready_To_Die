@@ -22,10 +22,21 @@ public class CharacterMovement : MonoBehaviour
 
     Vector3 velocity;
 
+    Duck myDuck;
+
+    string horizontalInputName;
+    string verticalInputName;
+    string jumpButtonName;
+
     // Start is called before the first frame update
     void Start()
     {
+        myDuck = GetComponent<Duck>();
         controller = GetComponent<CharacterController>();
+
+        horizontalInputName = myDuck.playerID + "_Horizontal";
+        verticalInputName = myDuck.playerID + "_Vertical";
+        jumpButtonName = myDuck.playerID + "_Jump";
     }
 
     // Update is called once per frame
@@ -57,10 +68,10 @@ public class CharacterMovement : MonoBehaviour
 
     void MovePlayer()
     {
-        float xRaw = Input.GetAxisRaw("Horizontal");
-        float zRaw = Input.GetAxisRaw("Vertical");
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float xRaw = Input.GetAxisRaw(horizontalInputName);
+        float zRaw = Input.GetAxisRaw(verticalInputName);
+        float x = Input.GetAxis(horizontalInputName);
+        float z = Input.GetAxis(verticalInputName);
 
         Vector3 lookDirection = new Vector3(xRaw, 0.0f, zRaw);
         if (xRaw != 0 || zRaw != 0)
@@ -74,7 +85,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown(jumpButtonName) && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
