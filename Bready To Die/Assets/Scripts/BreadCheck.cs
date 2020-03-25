@@ -5,13 +5,17 @@ using UnityEngine;
 public class BreadCheck : MonoBehaviour
 {
     public Duck myDuck;
+    public HandleDamage damageScript;
     public GameObject mouth;
     public float eatingDuration = 0.5f;
 
     private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(EatBread(other.gameObject));
-        Destroy(other.gameObject.GetComponent<Rigidbody>());  
+        if (!damageScript.isHit)
+        {
+            StartCoroutine(EatBread(other.gameObject));
+            Destroy(other.gameObject.GetComponent<Rigidbody>());
+        }
     }
 
     IEnumerator EatBread(GameObject targetbread)
