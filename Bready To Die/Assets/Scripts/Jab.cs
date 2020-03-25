@@ -13,27 +13,23 @@ public class Jab : MonoBehaviour
     bool canJab = true;
     bool isJabbing = false;
 
-    string jabButtonName;
-
     // Start is called before the first frame update
     void Start()
     {
         myDuck = GetComponentInParent<Duck>();
         jabCollider = GetComponent<CapsuleCollider>();
-        jabCollider.enabled = false;
-        jabButtonName = myDuck.playerID + "_Jab";
+        jabCollider.enabled = false;    
     }
 
     // Update is called once per frame
     void Update()
     {
         JabTimer();
-        DoJab();
     }
 
     public void DoJab()
     {
-        if (Input.GetButtonDown(jabButtonName) && canJab)
+        if (canJab)
         {
             currentTime = Time.time;
             jabCollider.enabled = true;

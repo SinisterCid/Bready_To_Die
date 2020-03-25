@@ -26,20 +26,24 @@ public class CharacterMovement : MonoBehaviour
     Vector3 alignment;
 
     Duck myDuck;
+    Jab jabScript;
 
     string horizontalInputName;
     string verticalInputName;
     string jumpButtonName;
+    string jabButtonName;
 
     // Start is called before the first frame update
     void Start()
     {
         myDuck = GetComponent<Duck>();
         controller = GetComponent<CharacterController>();
+        jabScript = GetComponentInChildren<Jab>();
 
         horizontalInputName = myDuck.playerID + "_Horizontal";
         verticalInputName = myDuck.playerID + "_Vertical";
         jumpButtonName = myDuck.playerID + "_Jump";
+        jabButtonName = myDuck.playerID + "_Jab";
     }
 
     // Update is called once per frame
@@ -52,6 +56,7 @@ public class CharacterMovement : MonoBehaviour
             velocity.y = -2f;
         }
 
+        InputControl();
         MovePlayer();
         Jump();
 
@@ -67,6 +72,8 @@ public class CharacterMovement : MonoBehaviour
         {
             alignToGround = false;
         }
+
+        
     }
 
     void MovePlayer()
@@ -114,5 +121,13 @@ public class CharacterMovement : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(transform.position, -transform.up, out hit, 2f, groundMask);
         alignment = hit.normal;
+    }
+
+    void InputControl()
+    {
+        if (Input.GetButtonDown(jabButtonName))
+        {
+            jabScript.DoJab();
+        }
     }
 }
