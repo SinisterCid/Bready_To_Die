@@ -120,36 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &48342025
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 48342026}
-  m_Layer: 0
-  m_Name: mouth
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &48342026
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48342025}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.748, z: 2.434}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1693613972}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &104479375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -306,6 +276,11 @@ PrefabInstance:
       propertyPath: speed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6517592206340857912, guid: c8f22d05a79d7804190e1f25ad4819fe,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 426723298, guid: c8f22d05a79d7804190e1f25ad4819fe, type: 3}
       propertyPath: mouth
       value: 
@@ -325,6 +300,10 @@ PrefabInstance:
     - target: {fileID: 2137598402, guid: c8f22d05a79d7804190e1f25ad4819fe, type: 3}
       propertyPath: eatingDuration
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 48342026, guid: c8f22d05a79d7804190e1f25ad4819fe, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f22d05a79d7804190e1f25ad4819fe, type: 3}
@@ -1556,12 +1535,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 255333816}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1693613972 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1693613972, guid: c8f22d05a79d7804190e1f25ad4819fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 6517592204686288010}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1915271250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1781,27 +1754,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6517592206340857912, guid: c8f22d05a79d7804190e1f25ad4819fe,
-        type: 3}
-      propertyPath: speed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 426723298, guid: c8f22d05a79d7804190e1f25ad4819fe, type: 3}
-      propertyPath: mouth
-      value: 
-      objectReference: {fileID: 48342025}
-    - target: {fileID: 1693613971, guid: c8f22d05a79d7804190e1f25ad4819fe, type: 3}
-      propertyPath: m_Name
-      value: model
-      objectReference: {fileID: 0}
-    - target: {fileID: 2137598402, guid: c8f22d05a79d7804190e1f25ad4819fe, type: 3}
-      propertyPath: mouth
-      value: 
-      objectReference: {fileID: 48342025}
-    - target: {fileID: 2137598402, guid: c8f22d05a79d7804190e1f25ad4819fe, type: 3}
-      propertyPath: eatingDuration
-      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f22d05a79d7804190e1f25ad4819fe, type: 3}

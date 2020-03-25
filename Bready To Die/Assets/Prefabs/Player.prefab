@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &48342025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 48342026}
+  m_Layer: 0
+  m_Name: mouth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &48342026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48342025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.953, z: 2.383}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1693613972}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1693613971
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +42,7 @@ GameObject:
   - component: {fileID: 1693613974}
   - component: {fileID: 1693613973}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +58,8 @@ Transform:
   m_LocalRotation: {x: -0.70705867, y: -0, z: -0, w: 0.707155}
   m_LocalPosition: {x: 0, y: -1.128, z: 0.124}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 48342026}
   m_Father: {fileID: 6517592206340857915}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
@@ -136,6 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDuck: {fileID: 426723298}
+  mouth: {fileID: 48342025}
+  eatingDuration: 0.25
 --- !u!1 &6517592205384890732
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de0fb9ec9b268d4c989e5cce736c484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 8
   gravity: -9.81
   jumpHeight: 3
   rotateSpeed: 4
@@ -317,4 +350,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d9e0e2dfd73744c85e71820bedb579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerID: 0
   breadCount: 0
