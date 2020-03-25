@@ -17,10 +17,13 @@ public class CharacterMovement : MonoBehaviour
     float currentZ;
 
     public bool isGrounded;
+    public bool alignToGround;
 
     CharacterController controller;
 
     Vector3 velocity;
+    Vector3 lookDirection;
+    Vector3 alignment;
 
     Duck myDuck;
 
@@ -56,14 +59,14 @@ public class CharacterMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        /*if (isGrounded)
+        if (isGrounded)
         {
-            GetAlignment();
+            alignToGround = true;
         }
         else
         {
-            transform.up = Vector3.up;
-        }*/
+            alignToGround = false;
+        }
     }
 
     void MovePlayer()
@@ -73,20 +76,35 @@ public class CharacterMovement : MonoBehaviour
         float x = Input.GetAxis(horizontalInputName);
         float z = Input.GetAxis(verticalInputName);
 
-        Vector3 lookDirection = new Vector3(xRaw, 0.0f, zRaw);
-        if (xRaw != 0 || zRaw != 0)
+        lookDirection = new Vector3(xRaw, 0.0f, zRaw);
+        Vector3 move = new Vector3(x, 0, z);
+
+        GetAlignment();
+
+        if ((xRaw != 0 || zRaw != 0) && isGrounded)
+        {
+            
+            Vector3 temp = Vector3.Cross(alignment, lookDirection);
+            Vector3 myDirection = Vector3.Cross(temp, alignment);
+            
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(myDirection), rotateSpeed * Time.deltaTime);            
+        }
+        else if ((xRaw != 0 || zRaw != 0) && !isGrounded)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), rotateSpeed * Time.deltaTime);
         }
 
-        Vector3 move = new Vector3(x, 0, z);
-        controller.Move(move * speed * Time.deltaTime);
+            controller.Move(move * speed * Time.deltaTime);
     }
 
     void Jump()
     {
         if (Input.GetButtonDown(jumpButtonName) && isGrounded)
         {
+            var currentRotation = transform.rotation;
+            currentRotation.x = 0;
+            currentRotation.z = 0;
+            transform.rotation = currentRotation;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
@@ -94,9 +112,7 @@ public class CharacterMovement : MonoBehaviour
     void GetAlignment()
     {
         RaycastHit hit;
-        Physics.Raycast(transform.position, -transform.up, out hit, 3f, groundMask);
-
-        Vector3 newUp = hit.normal;
-        transform.up = newUp;
+        Physics.Raycast(transform.position, -transform.up, out hit, 2f, groundMask);
+        alignment = hit.normal;
     }
 }
