@@ -29,8 +29,34 @@ public class BreadCheck : MonoBehaviour
             t -= Time.deltaTime;
             yield return null;
         }
-        myDuck.breadCount += 1;
+        Vector3 distanceToMouth = targetbread.transform.position - mouth.transform.position;
+        //only add bread to the duck who eats
+        if (distanceToMouth.magnitude < 0.5f)
+        {
+            UpdateWeightUI();
+            myDuck.breadCount += 1;
+        }
         Destroy(targetbread);
         yield break;
+    }
+
+    void UpdateWeightUI()
+    {
+        if (myDuck.playerID == 0)
+        {
+            GameObject.Find("GameManager").GetComponent<UIManager>().P1Weight += 1;
+        }
+        else if (myDuck.playerID == 1)
+        {
+            GameObject.Find("GameManager").GetComponent<UIManager>().P2Weight += 1;
+        }
+        else if (myDuck.playerID == 2)
+        {
+            GameObject.Find("GameManager").GetComponent<UIManager>().P3Weight += 1;
+        }
+        else if (myDuck.playerID == 3)
+        {
+            GameObject.Find("GameManager").GetComponent<UIManager>().P4Weight += 1;
+        }
     }
 }

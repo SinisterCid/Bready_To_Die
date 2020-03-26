@@ -35,6 +35,7 @@ public class HandleDamage : MonoBehaviour
             isHit = true;
             if (myDuck.breadCount > 0)
             {
+                UpdateWeightUI();
                 myDuck.breadCount -= 1;
                 Instantiate(breadPrefab, transform.position + transform.forward, Quaternion.identity);
             }
@@ -60,5 +61,25 @@ public class HandleDamage : MonoBehaviour
         }
 
         
+    }
+
+    void UpdateWeightUI()
+    {
+        if (myDuck.playerID == 0)
+        {
+            GameObject.Find("GameManager").GetComponent<UIManager>().P1Weight -= 1;
+        }
+        else if (myDuck.playerID == 1)
+        {
+            GameObject.Find("GameManager").GetComponent<UIManager>().P2Weight -= 1;
+        }
+        else if (myDuck.playerID == 2)
+        {
+            GameObject.Find("GameManager").GetComponent<UIManager>().P3Weight -= 1;
+        }
+        else if (myDuck.playerID == 3)
+        {
+            GameObject.Find("GameManager").GetComponent<UIManager>().P4Weight -= 1;
+        }
     }
 }
