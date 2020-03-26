@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    
+    PlayerCountManager PCScript;
+
     public Text P1WeightText;
     public Text P2WeightText;
     public Text P3WeightText;
@@ -29,10 +30,39 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        P1WeightText = GameObject.Find("P1UI").GetComponentInChildren<Text>();
-        P2WeightText = GameObject.Find("P2UI").GetComponentInChildren<Text>();
-        P3WeightText = GameObject.Find("P3UI").GetComponentInChildren<Text>();
-        P4WeightText = GameObject.Find("P4UI").GetComponentInChildren<Text>();
+        PCScript = GetComponent<PlayerCountManager>();
+        if (PCScript.P1Exists)
+        {
+            P1WeightText = GameObject.Find("P1UI").GetComponentInChildren<Text>();
+        }
+        else
+        {
+            GameObject.Find("P1UI").SetActive(false);
+        }
+        if (PCScript.P2Exists)
+        {
+            P2WeightText = GameObject.Find("P2UI").GetComponentInChildren<Text>();
+        }
+        else
+        {
+            GameObject.Find("P2UI").SetActive(false);
+        }
+        if (PCScript.P3Exists)
+        { 
+            P3WeightText = GameObject.Find("P3UI").GetComponentInChildren<Text>();
+        }
+        else
+        {
+            GameObject.Find("P3UI").SetActive(false);
+        }
+        if (PCScript.P4Exists)
+        {
+            P4WeightText = GameObject.Find("P4UI").GetComponentInChildren<Text>();
+        }
+        else
+        {
+            GameObject.Find("P4UI").SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -46,7 +76,7 @@ public class UIManager : MonoBehaviour
 
     void HandlePlayer1()
     {
-        if (P1WeightText != null)
+        if (P1WeightText != null && PCScript.P1Exists)
         {
             P1WeightText.text = "Weight (lbs): " + P1Weight;
         }
@@ -54,7 +84,7 @@ public class UIManager : MonoBehaviour
 
     void HandlePlayer2()
     {
-        if (P2WeightText != null)
+        if (P2WeightText != null && PCScript.P2Exists)
         {
             P2WeightText.text = "Weight (lbs): " + P2Weight;
         }
@@ -62,7 +92,7 @@ public class UIManager : MonoBehaviour
 
     void HandlePlayer3()
     {
-        if (P3WeightText != null)
+        if (P3WeightText != null && PCScript.P3Exists)
         {
             P3WeightText.text = "Weight (lbs): " + P3Weight;
         }
@@ -70,7 +100,7 @@ public class UIManager : MonoBehaviour
 
     void HandlePlayer4()
     {
-        if (P4WeightText != null)
+        if (P4WeightText != null && PCScript.P4Exists)
         {
             P4WeightText.text = "Weight (lbs): " + P4Weight;
         }
