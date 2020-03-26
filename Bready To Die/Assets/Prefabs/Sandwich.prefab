@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 4838542140853250982}
   - component: {fileID: 4838542140853250981}
   - component: {fileID: 4838542140853250985}
+  - component: {fileID: -3903876997048553158}
   m_Layer: 10
-  m_Name: bread
+  m_Name: Sandwich
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,3 +110,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3903876997048553158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4838542140853250980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543c7cf88dcb5bd49831f938919961f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weightValue: 4
+  timeToConsume: 3

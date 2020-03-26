@@ -7,7 +7,8 @@ public class BreadCheck : MonoBehaviour
     public Duck myDuck;
     public HandleDamage damageScript;
     public GameObject mouth;
-    public float eatingDuration = 0.5f;
+    //public float eatingDuration = 0.5f;
+    float addedWeight;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,12 +21,17 @@ public class BreadCheck : MonoBehaviour
 
     IEnumerator EatBread(GameObject targetbread)
     {
-        float t = eatingDuration;
+        //float t = eatingDuration;
+        //Nathan is testing with this code
+        float t = targetbread.GetComponent<BreadWeightTracker>().timeToConsume;
         Vector3 startPosition = targetbread.transform.position;
         while (t > 0)
         {
-            targetbread.transform.position = Vector3.Lerp(mouth.transform.position, startPosition, t / eatingDuration);
-            targetbread.transform.localScale = Vector3.one * Mathf.Lerp(0, 1, t / eatingDuration);
+            //targetbread.transform.position = Vector3.Lerp(mouth.transform.position, startPosition, t / eatingDuration);
+            //targetbread.transform.localScale = Vector3.one * Mathf.Lerp(0, 1, t / eatingDuration);
+            //Nathan is testing with this code
+            targetbread.transform.position = Vector3.Lerp(mouth.transform.position, startPosition, t / targetbread.GetComponent<BreadWeightTracker>().timeToConsume);
+            targetbread.transform.localScale = Vector3.one * Mathf.Lerp(0, 1, t / targetbread.GetComponent<BreadWeightTracker>().timeToConsume);
             t -= Time.deltaTime;
             yield return null;
         }
@@ -33,6 +39,7 @@ public class BreadCheck : MonoBehaviour
         //only add bread to the duck who eats
         if (distanceToMouth.magnitude < 0.5f)
         {
+            addedWeight = targetbread.GetComponent<BreadWeightTracker>().weightValue;
             UpdateWeightUI();
             myDuck.breadCount += 1;
         }
@@ -44,19 +51,19 @@ public class BreadCheck : MonoBehaviour
     {
         if (myDuck.playerID == 0)
         {
-            GameObject.Find("GameManager").GetComponent<UIManager>().P1Weight += 1;
+            GameObject.Find("GameManager").GetComponent<UIManager>().P1Weight += addedWeight;
         }
         else if (myDuck.playerID == 1)
         {
-            GameObject.Find("GameManager").GetComponent<UIManager>().P2Weight += 1;
+            GameObject.Find("GameManager").GetComponent<UIManager>().P2Weight += addedWeight;
         }
         else if (myDuck.playerID == 2)
         {
-            GameObject.Find("GameManager").GetComponent<UIManager>().P3Weight += 1;
+            GameObject.Find("GameManager").GetComponent<UIManager>().P3Weight += addedWeight;
         }
         else if (myDuck.playerID == 3)
         {
-            GameObject.Find("GameManager").GetComponent<UIManager>().P4Weight += 1;
+            GameObject.Find("GameManager").GetComponent<UIManager>().P4Weight += addedWeight;
         }
     }
 }

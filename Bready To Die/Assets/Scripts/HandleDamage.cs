@@ -67,19 +67,19 @@ public class HandleDamage : MonoBehaviour
     {
         if (myDuck.playerID == 0)
         {
-            GameObject.Find("GameManager").GetComponent<UIManager>().P1Weight -= 1;
+            GameObject.Find("GameManager").GetComponent<UIManager>().P1Weight -= 0.5f;
         }
         else if (myDuck.playerID == 1)
         {
-            GameObject.Find("GameManager").GetComponent<UIManager>().P2Weight -= 1;
+            GameObject.Find("GameManager").GetComponent<UIManager>().P2Weight -= 0.5f;
         }
         else if (myDuck.playerID == 2)
         {
-            GameObject.Find("GameManager").GetComponent<UIManager>().P3Weight -= 1;
+            GameObject.Find("GameManager").GetComponent<UIManager>().P3Weight -= 0.5f;
         }
         else if (myDuck.playerID == 3)
         {
-            GameObject.Find("GameManager").GetComponent<UIManager>().P4Weight -= 1;
+            GameObject.Find("GameManager").GetComponent<UIManager>().P4Weight -= 0.5f;
         }
     }
 }

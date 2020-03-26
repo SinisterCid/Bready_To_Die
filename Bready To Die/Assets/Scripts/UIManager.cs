@@ -80,6 +80,11 @@ public class UIManager : MonoBehaviour
         {
             P1WeightText.text = "Weight (lbs): " + P1Weight;
         }
+
+        if (P1Weight < 0)
+        {
+            P1Weight = 0;
+        }
     }
 
     void HandlePlayer2()
@@ -87,6 +92,11 @@ public class UIManager : MonoBehaviour
         if (P2WeightText != null && PCScript.P2Exists)
         {
             P2WeightText.text = "Weight (lbs): " + P2Weight;
+        }
+
+        if (P2Weight < 0)
+        {
+            P2Weight = 0;
         }
     }
 
@@ -96,6 +106,11 @@ public class UIManager : MonoBehaviour
         {
             P3WeightText.text = "Weight (lbs): " + P3Weight;
         }
+
+        if (P3Weight < 0)
+        {
+            P3Weight = 0;
+        }
     }
 
     void HandlePlayer4()
@@ -103,6 +118,11 @@ public class UIManager : MonoBehaviour
         if (P4WeightText != null && PCScript.P4Exists)
         {
             P4WeightText.text = "Weight (lbs): " + P4Weight;
+        }
+
+        if (P4Weight < 0)
+        {
+            P4Weight = 0;
         }
     }
 }
