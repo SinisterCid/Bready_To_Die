@@ -8,6 +8,7 @@ public class HandleDamage : MonoBehaviour
     float hitTime = 2.5f;
     float currentTime;
     Duck myDuck;
+    SizeHandler sizeHandlerScript;
     public GameObject breadPrefab;
     public MeshRenderer myMesh;
 
@@ -15,6 +16,7 @@ public class HandleDamage : MonoBehaviour
     void Start()
     {       
         myDuck = GetComponent<Duck>();
+        sizeHandlerScript = GetComponent<SizeHandler>();
     }
 
     // Update is called once per frame
@@ -33,10 +35,10 @@ public class HandleDamage : MonoBehaviour
         {
             currentTime = Time.time;
             isHit = true;
-            if (myDuck.breadCount > 0)
+            if (sizeHandlerScript.myWeight > 0.5f)
             {
                 UpdateWeightUI();
-                myDuck.breadCount -= 1;
+                //myDuck.breadCount -= 1;
                 Instantiate(breadPrefab, transform.position + transform.forward, Quaternion.identity);
             }
 

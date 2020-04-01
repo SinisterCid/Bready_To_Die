@@ -118,7 +118,6 @@ MonoBehaviour:
   myDuck: {fileID: 8852278283972858777}
   damageScript: {fileID: 100942235}
   mouth: {fileID: 8852278284586970791}
-  eatingDuration: 0.25
 --- !u!1 &8852278283972858776
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +134,7 @@ GameObject:
   - component: {fileID: 8852278283972858774}
   - component: {fileID: 8852278283972858777}
   - component: {fileID: 100942235}
+  - component: {fileID: 5536517198787027846}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -275,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerID: 0
   breadCount: 0
+  currentSizeLevel: 1
 --- !u!114 &100942235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +292,24 @@ MonoBehaviour:
   breadPrefab: {fileID: 4838542140853250980, guid: c651482c7a70ac54e869f91e08ea2186,
     type: 3}
   myMesh: {fileID: 8852278285251445255}
+--- !u!114 &5536517198787027846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8852278283972858776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b089b10685ce4044a86a951dacdfb276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeLevelNumber:
+  - {fileID: 21300000, guid: 6f348dee6d0f1344ba73feac091ba8de, type: 3}
+  - {fileID: 21300000, guid: 329dadf7ecebad543877e0b0b807aa94, type: 3}
+  - {fileID: 21300000, guid: 39723b755c00dfa469874f0348cdb5b8, type: 3}
+  - {fileID: 21300000, guid: 30db9d463a515824899db0fbd9017949, type: 3}
+  - {fileID: 21300000, guid: 359bc1ee063d0d44480c270244c4d5fd, type: 3}
 --- !u!1 &8852278284584438742
 GameObject:
   m_ObjectHideFlags: 0
