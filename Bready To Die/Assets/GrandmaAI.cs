@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +11,7 @@ public class GrandmaAI : MonoBehaviour
     public GameObject breadSpawnPoint;
 
     public GameObject breadPrefab;
-    public float breadThrowForce = 5f;
+    public Vector2 breadThrowForce;
 
     float timeSinceLastThrow;
 
@@ -37,21 +36,27 @@ public class GrandmaAI : MonoBehaviour
                 ThrowBreadAnim();
             }
         }
+        else
+        {
+            timeSinceLastThrow = 0;
+        }
 
-        
     }
 
     private void ThrowBreadAnim()
     {
         print("throw");
         grandmaAnimator.SetTrigger("doThrow");
-
+        if (breadThrowRate < 1)
+        {
+            grandmaAnimator.speed = 1/breadThrowRate;
+        }
     }
 
     public void SpawnBread()
     {
         GameObject newBread = Instantiate(breadPrefab, breadSpawnPoint.transform.position, Quaternion.identity);
-        newBread.GetComponent<Rigidbody>().AddForce((transform.forward + transform.up).normalized * breadThrowForce, ForceMode.Impulse);
+        newBread.GetComponent<Rigidbody>().AddForce((transform.forward + transform.up).normalized * Random.Range(breadThrowForce.x, breadThrowForce.y), ForceMode.Impulse);
     }
 
 }

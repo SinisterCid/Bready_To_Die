@@ -204,6 +204,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c651482c7a70ac54e869f91e08ea2186, type: 3}
+--- !u!1 &155914656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: c86ace9a36407a845a048d4ba90e0ee8,
+    type: 3}
+  m_PrefabInstance: {fileID: 478805474}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &155914657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c86ace9a36407a845a048d4ba90e0ee8,
@@ -216,6 +222,19 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 478805474}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &155914659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155914656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506b2f34da9f34044b403c9e28ab5529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grandmaAIScript: {fileID: 1627569250}
 --- !u!1 &296713908
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,8 +706,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296713908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.97, y: 0, z: 11.369}
-  m_LocalScale: {x: 4.407708, y: 1, z: 1.2632}
+  m_LocalPosition: {x: 24.97, y: 0, z: 19.46}
+  m_LocalScale: {x: 4.407708, y: 1, z: 2.0148041}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -1650,6 +1669,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c651482c7a70ac54e869f91e08ea2186, type: 3}
+--- !u!1 &1297133445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5676817949744194301, guid: c86ace9a36407a845a048d4ba90e0ee8,
+    type: 3}
+  m_PrefabInstance: {fileID: 478805474}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1627569248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,7 +1700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627569248}
   m_LocalRotation: {x: -0, y: -0.70706606, z: -0, w: 0.70714754}
-  m_LocalPosition: {x: 17.942865, y: 0, z: -6.6094275}
+  m_LocalPosition: {x: 23.05, y: 0, z: -6.6094275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 155914657}
@@ -1696,7 +1721,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grandmaAnimator: {fileID: 155914658}
   rotationRate: 50
-  breadThrowRate: 2
+  breadThrowRate: 0.3
+  breadSpawnPoint: {fileID: 1297133445}
+  breadPrefab: {fileID: 4838542140853250980, guid: c651482c7a70ac54e869f91e08ea2186,
+    type: 3}
+  breadThrowForce: {x: 3, y: 12}
 --- !u!1001 &1915271250
 PrefabInstance:
   m_ObjectHideFlags: 0
