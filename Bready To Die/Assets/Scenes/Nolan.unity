@@ -210,6 +210,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 478805474}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &155914658 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: c86ace9a36407a845a048d4ba90e0ee8,
+    type: 3}
+  m_PrefabInstance: {fileID: 478805474}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &296713908
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +913,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: c86ace9a36407a845a048d4ba90e0ee8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c86ace9a36407a845a048d4ba90e0ee8,
         type: 3}
@@ -1653,8 +1659,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1627569249}
+  - component: {fileID: 1627569250}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Grandma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1675,6 +1682,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -89.993004, z: 0}
+--- !u!114 &1627569250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627569248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b054074d82e114c902c5eeece325d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grandmaAnimator: {fileID: 155914658}
+  rotationRate: 50
+  breadThrowRate: 2
 --- !u!1001 &1915271250
 PrefabInstance:
   m_ObjectHideFlags: 0
