@@ -16,6 +16,7 @@ public class BreadCheck : MonoBehaviour
         {
             StartCoroutine(EatBread(other.gameObject));
             Destroy(other.gameObject.GetComponent<Rigidbody>());
+            Destroy(other.gameObject.GetComponent<Collider>());
         }
     }
 
