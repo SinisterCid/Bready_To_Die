@@ -22,10 +22,10 @@ public class UIManager : MonoBehaviour
     public float P3Weight = 0;
     public float P4Weight = 0;
 
-    public int P1WLevel;
-    public int P2WLevel;
-    public int P3WLevel;
-    public int P4WLevel;
+    public int P1WLevel = 1;
+    public int P2WLevel = 1;
+    public int P3WLevel = 1;
+    public int P4WLevel = 1;
 
     // Start is called before the first frame update
     void Start()

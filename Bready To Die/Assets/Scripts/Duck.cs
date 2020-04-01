@@ -6,6 +6,7 @@ public class Duck : MonoBehaviour
 {
     public int playerID;
     public int breadCount = 0;
+    public int currentSizeLevel = 1;
 
     // Start is called before the first frame update
     void Start()

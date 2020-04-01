@@ -12,6 +12,11 @@ public class PlayerCountManager : MonoBehaviour
     public bool P3Exists = false;
     public bool P4Exists = false;
 
+    GameObject P1;
+    GameObject P2;
+    GameObject P3;
+    GameObject P4;
+
     private void Awake()
     {
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
@@ -48,7 +53,6 @@ public class PlayerCountManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
 
     }
 
