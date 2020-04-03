@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
-    public List<GameObject> players;
     public List<int> IDs;
 
     public bool P1Exists = false;
