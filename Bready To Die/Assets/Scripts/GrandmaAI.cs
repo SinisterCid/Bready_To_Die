@@ -18,6 +18,8 @@ public class GrandmaAI : MonoBehaviour
     public GameObject[] nodes;
     public float moveSpeed = 3f;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
