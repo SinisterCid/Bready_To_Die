@@ -15,13 +15,14 @@ public class CharacterMovement : MonoBehaviour
 
     float currentX;
     float currentZ;
+    public float walkSpeed;
 
     public bool isGrounded;
     public bool alignToGround;
 
     CharacterController controller;
 
-    Vector3 velocity;
+    public Vector3 velocity;
     Vector3 lookDirection;
     Vector3 alignment;
 
@@ -50,7 +51,7 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
+        
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
@@ -82,7 +83,7 @@ public class CharacterMovement : MonoBehaviour
         float zRaw = Input.GetAxisRaw(verticalInputName);
         float x = Input.GetAxis(horizontalInputName);
         float z = Input.GetAxis(verticalInputName);
-
+        walkSpeed = Mathf.Abs(x) + Mathf.Abs(z);
         lookDirection = new Vector3(xRaw, 0.0f, zRaw);
         Vector3 move = new Vector3(x, 0, z);
 

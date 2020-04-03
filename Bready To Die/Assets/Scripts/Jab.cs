@@ -6,16 +6,18 @@ public class Jab : MonoBehaviour
 {
     CapsuleCollider jabCollider;
     Duck myDuck;
+    CharacterMovement movementScript;
 
     float jabTime = 0.6f;
     float jabDetectTime = 0.3f;
     float currentTime;
     bool canJab = true;
-    bool isJabbing = false;
+    public bool isJabbing = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        movementScript = GetComponentInParent<CharacterMovement>();
         myDuck = GetComponentInParent<Duck>();
         jabCollider = GetComponent<CapsuleCollider>();
         jabCollider.enabled = false;    
@@ -29,7 +31,7 @@ public class Jab : MonoBehaviour
 
     public void DoJab()
     {
-        if (canJab)
+        if (canJab && movementScript.isGrounded)
         {
             currentTime = Time.time;
             jabCollider.enabled = true;

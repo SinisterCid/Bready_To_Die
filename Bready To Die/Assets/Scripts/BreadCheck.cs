@@ -7,14 +7,16 @@ public class BreadCheck : MonoBehaviour
     public Duck myDuck;
     public HandleDamage damageScript;
     public GameObject mouth;
-    bool isEating = false;
+    public bool isEating = false;
+    bool canEat = true;
     //public float eatingDuration = 0.5f;
     float addedWeight;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!damageScript.isHit && !isEating)
+        if (!damageScript.isHit && canEat)
         {
+            canEat = false;
             isEating = true;
             StartCoroutine(EatBread(other.gameObject));
             Destroy(other.gameObject.GetComponent<Rigidbody>());
@@ -47,6 +49,7 @@ public class BreadCheck : MonoBehaviour
             UpdateWeightUI();
             myDuck.breadCount += 1;
         }
+        canEat = true;
         isEating = false;
         Destroy(targetbread);
         yield break;

@@ -10,7 +10,7 @@ public class HandleDamage : MonoBehaviour
     Duck myDuck;
     SizeHandler sizeHandlerScript;
     public GameObject breadPrefab;
-    public MeshRenderer myMesh;
+    public SkinnedMeshRenderer myMesh;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +59,7 @@ public class HandleDamage : MonoBehaviour
                 myMesh.enabled = true;
             }
 
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.2f);
         }
 
         
