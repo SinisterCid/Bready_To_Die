@@ -12,7 +12,19 @@ public class BreadCheck : MonoBehaviour
     //public float eatingDuration = 0.5f;
     float addedWeight;
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
+    {
+        if (!damageScript.isHit && canEat)
+        {
+            canEat = false;
+            isEating = true;
+            StartCoroutine(EatBread(other.gameObject));
+            Destroy(other.gameObject.GetComponent<Rigidbody>());
+            Destroy(other.gameObject.GetComponent<Collider>());
+        }
+    }*/
+
+    private void OnTriggerStay(Collider other)
     {
         if (!damageScript.isHit && canEat)
         {
@@ -37,6 +49,7 @@ public class BreadCheck : MonoBehaviour
             //Nathan is testing with this code
             //targetbread.transform.position = Vector3.Lerp(mouth.transform.position, startPosition, t / targetbread.GetComponent<BreadWeightTracker>().timeToConsume);
             targetbread.transform.position = mouth.transform.position;
+            targetbread.GetComponent<MeshRenderer>().enabled = false;
             targetbread.transform.localScale = Vector3.one * Mathf.Lerp(0, 1, t / targetbread.GetComponent<BreadWeightTracker>().timeToConsume);
             t -= Time.deltaTime;
             yield return null;
