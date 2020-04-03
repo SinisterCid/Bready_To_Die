@@ -7,6 +7,8 @@ public class PlayerManager : MonoBehaviour
 {
     public List<int> IDs;
 
+    public string gameplaySceneName;
+
     public bool P1Exists = false;
     public bool P2Exists = false;
     public bool P3Exists = false;
@@ -88,7 +90,7 @@ public class PlayerManager : MonoBehaviour
 
     public void StartGameplayScene()
     {
-        SceneManager.LoadScene("Nolan", LoadSceneMode.Single);
+        SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
     }
 
 
