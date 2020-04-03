@@ -15,8 +15,8 @@ public class GrandmaAI : MonoBehaviour
 
     float timeSinceLastThrow;
 
-
-
+    public GameObject[] nodes;
+    public float moveSpeed = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +41,10 @@ public class GrandmaAI : MonoBehaviour
             timeSinceLastThrow = 0;
         }
 
+        transform.Rotate(Vector3.up, rotationRate * Time.deltaTime);
+
     }
+
 
     private void ThrowBreadAnim()
     {
