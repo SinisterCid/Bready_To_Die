@@ -7,13 +7,15 @@ public class BreadCheck : MonoBehaviour
     public Duck myDuck;
     public HandleDamage damageScript;
     public GameObject mouth;
+    bool isEating = false;
     //public float eatingDuration = 0.5f;
     float addedWeight;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!damageScript.isHit)
+        if (!damageScript.isHit && !isEating)
         {
+            isEating = true;
             StartCoroutine(EatBread(other.gameObject));
             Destroy(other.gameObject.GetComponent<Rigidbody>());
             Destroy(other.gameObject.GetComponent<Collider>());
@@ -31,7 +33,8 @@ public class BreadCheck : MonoBehaviour
             //targetbread.transform.position = Vector3.Lerp(mouth.transform.position, startPosition, t / eatingDuration);
             //targetbread.transform.localScale = Vector3.one * Mathf.Lerp(0, 1, t / eatingDuration);
             //Nathan is testing with this code
-            targetbread.transform.position = Vector3.Lerp(mouth.transform.position, startPosition, t / targetbread.GetComponent<BreadWeightTracker>().timeToConsume);
+            //targetbread.transform.position = Vector3.Lerp(mouth.transform.position, startPosition, t / targetbread.GetComponent<BreadWeightTracker>().timeToConsume);
+            targetbread.transform.position = mouth.transform.position;
             targetbread.transform.localScale = Vector3.one * Mathf.Lerp(0, 1, t / targetbread.GetComponent<BreadWeightTracker>().timeToConsume);
             t -= Time.deltaTime;
             yield return null;
@@ -44,6 +47,7 @@ public class BreadCheck : MonoBehaviour
             UpdateWeightUI();
             myDuck.breadCount += 1;
         }
+        isEating = false;
         Destroy(targetbread);
         yield break;
     }
