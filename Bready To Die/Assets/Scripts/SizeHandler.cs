@@ -11,6 +11,7 @@ public class SizeHandler : MonoBehaviour
     float sizeDivider;
     Duck myDuck;
     UIManager UIManagerScript;
+    CharacterMovement movementScript;
     public float myWeight;
     float myTempWeight;
 
@@ -32,6 +33,7 @@ public class SizeHandler : MonoBehaviour
         changeSize = false;
         duckMesh = GetComponentInChildren<SkinnedMeshRenderer>();
         myDuck = GetComponent<Duck>();
+        movementScript = GetComponent<CharacterMovement>();
         UIManagerScript = GameObject.Find("GameManager").GetComponent<UIManager>();
     }
 
@@ -128,6 +130,8 @@ public class SizeHandler : MonoBehaviour
     {
         if (myWeightLevel == 1)
         {
+            movementScript.speed = 8f;
+            movementScript.gravity = -9.81f;
             newSize1 = 0;
             newSize2 = 0;
 
@@ -145,6 +149,8 @@ public class SizeHandler : MonoBehaviour
         }
         if (myWeightLevel == 2)
         {
+            movementScript.speed = 6.4f;
+            movementScript.gravity = -10f;
             newSize1 = 100;
             newSize2 = 0;
             
@@ -161,7 +167,9 @@ public class SizeHandler : MonoBehaviour
             }
         }
         if (myWeightLevel == 3)
-        {                
+        {
+            movementScript.speed = 5.1f;
+            movementScript.gravity = -11.5f;
             newSize1 = 100;
             newSize2 = 33;
 
@@ -180,6 +188,8 @@ public class SizeHandler : MonoBehaviour
         }
         if (myWeightLevel == 4)
         {
+            movementScript.speed = 4.1f;
+            movementScript.gravity = -13f;
             newSize1 = 100;
             newSize2 = 66;
 
@@ -197,6 +207,8 @@ public class SizeHandler : MonoBehaviour
         }
         if (myWeightLevel == 5)
         {
+            movementScript.speed = 3.3f;
+            movementScript.gravity = -15f;
             newSize1 = 100;
             newSize2 = 100;
 
