@@ -9,7 +9,7 @@ public class BreadCheck : MonoBehaviour
     public GameObject mouth;
     public bool isEating = false;
     bool canEat = true;
-    //public float eatingDuration = 0.5f;
+    public float eatingDuration = 0.5f;
     float addedWeight;
 
     /*private void OnTriggerEnter(Collider other)
@@ -38,30 +38,25 @@ public class BreadCheck : MonoBehaviour
 
     IEnumerator EatBread(GameObject targetbread)
     {
-        //float t = eatingDuration;
-        //Nathan is testing with this code
         float t = targetbread.GetComponent<BreadWeightTracker>().timeToConsume;
+        float timeToConsume = targetbread.GetComponent<BreadWeightTracker>().timeToConsume;
         Vector3 startPosition = targetbread.transform.position;
+        Vector3 initialScale = targetbread.transform.localScale;
         while (t > 0)
         {
-            //targetbread.transform.position = Vector3.Lerp(mouth.transform.position, startPosition, t / eatingDuration);
-            //targetbread.transform.localScale = Vector3.one * Mathf.Lerp(0, 1, t / eatingDuration);
-            //Nathan is testing with this code
-            //targetbread.transform.position = Vector3.Lerp(mouth.transform.position, startPosition, t / targetbread.GetComponent<BreadWeightTracker>().timeToConsume);
-            targetbread.transform.position = mouth.transform.position;
-            targetbread.GetComponent<MeshRenderer>().enabled = false;
-            targetbread.transform.localScale = Vector3.one * Mathf.Lerp(0, 1, t / targetbread.GetComponent<BreadWeightTracker>().timeToConsume);
             t -= Time.deltaTime;
+            targetbread.transform.position = Vector3.Lerp(mouth.transform.position, startPosition, t / timeToConsume);
+            targetbread.transform.localScale = Vector3.Lerp(Vector3.zero, initialScale, t / timeToConsume);
             yield return null;
         }
-        Vector3 distanceToMouth = targetbread.transform.position - mouth.transform.position;
-        //only add bread to the duck who eats
-        if (distanceToMouth.magnitude < 0.5f)
-        {
-            addedWeight = targetbread.GetComponent<BreadWeightTracker>().weightValue;
-            UpdateWeightUI();
-            myDuck.breadCount += 1;
-        }
+        //Vector3 distanceToMouth = targetbread.transform.position - mouth.transform.position;
+        ////only add bread to the duck who eats
+        //if (distanceToMouth.magnitude < 0.5f)
+        //{
+        addedWeight = targetbread.GetComponent<BreadWeightTracker>().weightValue;
+        UpdateWeightUI();
+        myDuck.breadCount += 1;
+        //}
         canEat = true;
         isEating = false;
         Destroy(targetbread);
