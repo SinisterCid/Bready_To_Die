@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class HandleDamage : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class HandleDamage : MonoBehaviour
     {
         if (!isHit)
         {
+            Analytics.CustomEvent("PlayerHitByJab");
             currentTime = Time.time;
             isHit = true;
             if (sizeHandlerScript.myWeight > 0.5f)

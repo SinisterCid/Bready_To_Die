@@ -50,7 +50,6 @@ public class GrandmaAI : MonoBehaviour
 
     private void ThrowBreadAnim()
     {
-        print("throw");
         grandmaAnimator.SetTrigger("doThrow");
         if (breadThrowRate < 1)
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -90,6 +91,7 @@ public class PlayerManager : MonoBehaviour
 
     public void StartGameplayScene()
     {
+        Analytics.CustomEvent("GameStarted");
         SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
     }
 

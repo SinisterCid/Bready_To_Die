@@ -9,6 +9,5 @@ public class ThrowEventHandler : MonoBehaviour
     public void breadTossEvent()
     {
         grandmaAIScript.SpawnBread();
-        print("event");
     }
 }

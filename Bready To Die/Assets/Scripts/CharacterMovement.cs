@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -72,9 +73,7 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             alignToGround = false;
-        }
-
-        
+        }    
     }
 
     void MovePlayer()
@@ -114,8 +113,12 @@ public class CharacterMovement : MonoBehaviour
             currentRotation.z = 0;
             transform.rotation = currentRotation;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+            //analytics jump event 
+            Analytics.CustomEvent("PlayerJumps");
         }
     }
+
 
     void GetAlignment()
     {
@@ -129,6 +132,7 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetButtonDown(jabButtonName))
         {
             jabScript.DoJab();
+            Analytics.CustomEvent("PlayerJab");
         }
     }
 }
