@@ -88,12 +88,9 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-
     public void StartGameplayScene()
     {
         Analytics.CustomEvent("GameStarted");
         SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
     }
-
-
 }
