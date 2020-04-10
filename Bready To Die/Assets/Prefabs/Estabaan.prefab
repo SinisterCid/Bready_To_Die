@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8893a3321f9a0f04d942a03e06661529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isJabbing: 0
 --- !u!1 &8852278283468549680
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,6 +120,7 @@ MonoBehaviour:
   damageScript: {fileID: 100942235}
   mouth: {fileID: 8852278284586970791}
   isEating: 0
+  eatingDuration: 0.5
 --- !u!1 &8852278283972858776
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,8 +264,10 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  walkSpeed: 0
   isGrounded: 0
   alignToGround: 0
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &8852278283972858777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +298,7 @@ MonoBehaviour:
   isHit: 0
   breadPrefab: {fileID: 4838542140853250980, guid: c651482c7a70ac54e869f91e08ea2186,
     type: 3}
-  myMesh: {fileID: 4305155776709125081}
+  myMesh: {fileID: 0}
 --- !u!114 &5536517198787027846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +312,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myWeight: 0
+  myWeightLevel: 0
+  changeSize: 0
+  duckMesh: {fileID: 0}
   sizeLevelNumber:
   - {fileID: 21300000, guid: 6f348dee6d0f1344ba73feac091ba8de, type: 3}
   - {fileID: 21300000, guid: 329dadf7ecebad543877e0b0b807aa94, type: 3}
@@ -416,7 +423,7 @@ PrefabInstance:
     - target: {fileID: 7033738970658515065, guid: 0592ade17e0186e4680f0b420c68ac54,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.93
+      value: -1.51
       objectReference: {fileID: 0}
     - target: {fileID: 7033738970658515065, guid: 0592ade17e0186e4680f0b420c68ac54,
         type: 3}
@@ -483,12 +490,6 @@ PrefabInstance:
 --- !u!4 &754913911658978187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7033738970658515065, guid: 0592ade17e0186e4680f0b420c68ac54,
-    type: 3}
-  m_PrefabInstance: {fileID: 7774658127982703602}
-  m_PrefabAsset: {fileID: 0}
---- !u!137 &4305155776709125081 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 5790466106568527915, guid: 0592ade17e0186e4680f0b420c68ac54,
     type: 3}
   m_PrefabInstance: {fileID: 7774658127982703602}
   m_PrefabAsset: {fileID: 0}
