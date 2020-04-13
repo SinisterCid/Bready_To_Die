@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1307881dc921d418ed057b0d582a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animController: {fileID: 7898269719712625124}
+  animController: {fileID: 857256975723725497}
 --- !u!1001 &7100652572969104615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -371,6 +371,11 @@ PrefabInstance:
     - target: {fileID: 1087302180277880067, guid: 0592ade17e0186e4680f0b420c68ac54,
         type: 3}
       propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087302180277880067, guid: 0592ade17e0186e4680f0b420c68ac54,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1123259009842466272, guid: 0592ade17e0186e4680f0b420c68ac54,
@@ -486,9 +491,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7100652572969104615}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7898269719712625124 stripped
+--- !u!95 &857256975723725497 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 1087302180277880067, guid: 0592ade17e0186e4680f0b420c68ac54,
+  m_CorrespondingSourceObject: {fileID: 7597294710653482590, guid: 0592ade17e0186e4680f0b420c68ac54,
     type: 3}
   m_PrefabInstance: {fileID: 7100652572969104615}
   m_PrefabAsset: {fileID: 0}
