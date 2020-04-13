@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     PlayerCountManager PCScript;
+    PlayerManager PMScript;
 
     public Text P1WeightText;
     public Text P2WeightText;
@@ -41,6 +43,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         PCScript = GetComponent<PlayerCountManager>();
+        PMScript = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         if (PCScript.P1Exists)
         {
             P1WLevel = 1;
@@ -94,6 +97,11 @@ public class UIManager : MonoBehaviour
         HandlePlayer2();
         HandlePlayer3();
         HandlePlayer4();
+
+        if (P1Weight >= 50 || P2Weight >= 50 || P3Weight >= 50 || P4Weight >= 50)
+        {
+            EndGame();
+        }
     }
 
     void HandlePlayer1()
@@ -156,5 +164,14 @@ public class UIManager : MonoBehaviour
         {
             P4Weight = 0;
         }
+    }
+
+    public void EndGame()
+    {
+        PMScript.P1EndWeight = P1Weight;
+        PMScript.P2EndWeight = P2Weight;
+        PMScript.P3EndWeight = P3Weight;
+        PMScript.P4EndWeight = P4Weight;
+        SceneManager.LoadScene("WinnerScene");
     }
 }

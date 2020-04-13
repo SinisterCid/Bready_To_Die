@@ -19,6 +19,11 @@ public class PlayerManager : MonoBehaviour
 
     public bool markerOnMouse;
 
+    public float P1EndWeight = 0;
+    public float P2EndWeight = 0;
+    public float P3EndWeight = 0;
+    public float P4EndWeight = 0;
+
     private void SetInstance()
     {
         if (playerManager == null)
