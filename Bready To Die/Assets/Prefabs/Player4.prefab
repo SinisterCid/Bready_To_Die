@@ -326,7 +326,7 @@ MonoBehaviour:
   myWeight: 0
   myWeightLevel: 0
   changeSize: 0
-  duckMesh: {fileID: 0}
+  duckMesh: {fileID: 7572461845211268563}
   sizeLevelNumber:
   - {fileID: 21300000, guid: 6f348dee6d0f1344ba73feac091ba8de, type: 3}
   - {fileID: 21300000, guid: 329dadf7ecebad543877e0b0b807aa94, type: 3}

@@ -43,15 +43,15 @@ public class CameraFollow : MonoBehaviour
     private void Move()
     {
         Vector3 centerPoint = GetCenterPoint();
-        //Vector3 newPosition = centerPoint + offset;
-        transform.LookAt(centerPoint);
-        //transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+        Vector3 newPosition = centerPoint + offset;
+        //transform.LookAt(centerPoint);
+        transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
     }
 
     private void Zoom()
     {
         float newZoom = Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance()/ zoomLimiter);
-        mainCam.orthographicSize = Mathf.Lerp(mainCam.orthographicSize, newZoom, Time.deltaTime);
+        mainCam.fieldOfView = Mathf.Lerp(mainCam.fieldOfView, newZoom, Time.deltaTime);
     }
 
     float GetGreatestDistance()

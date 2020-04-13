@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
 
@@ -40,7 +39,6 @@ public class HandleDamage : MonoBehaviour
             if (sizeHandlerScript.myWeight > 0.5f)
             {
                 UpdateWeightUI();
-                //myDuck.breadCount -= 1;
                 Instantiate(breadPrefab, transform.position + transform.forward, Quaternion.identity);
             }
 

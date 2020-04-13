@@ -31,7 +31,7 @@ public class SizeHandler : MonoBehaviour
         oldSize1 = 0;
         oldSize2 = 0;
         changeSize = false;
-        duckMesh = GetComponentInChildren<SkinnedMeshRenderer>();
+        //duckMesh = GetComponentInChildren<SkinnedMeshRenderer>();
         myDuck = GetComponent<Duck>();
         movementScript = GetComponent<CharacterMovement>();
         UIManagerScript = GameObject.Find("GameManager").GetComponent<UIManager>();

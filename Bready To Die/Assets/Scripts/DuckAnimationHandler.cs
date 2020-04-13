@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DuckAnimationHandler : MonoBehaviour
 {
@@ -15,7 +13,6 @@ public class DuckAnimationHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //animController = GetComponentInChildren<Animator>();
         shScript = GetComponent<SizeHandler>();
         jabScript = GetComponentInChildren<Jab>();
         damageScript = GetComponent<HandleDamage>();

@@ -37,25 +37,25 @@ public class PlayerCountManager : MonoBehaviour
             IDs.Add(player.GetComponent<Duck>().playerID);
         }
 
-        if (/*IDs.Contains(0)*/ PMScript.P1Exists)
+        if (PMScript.P1Exists)
         {
             P1Exists = true;
             Instantiate(P1, P1Spawn.transform.position, Quaternion.identity);
         }
 
-        if (/*IDs.Contains(1)*/ PMScript.P2Exists)
+        if (PMScript.P2Exists)
         {
             P2Exists = true;
             Instantiate(P2, P2Spawn.transform.position, Quaternion.identity);
         }
 
-        if (/*IDs.Contains(2)*/ PMScript.P3Exists)
+        if (PMScript.P3Exists)
         {
             P3Exists = true;
             Instantiate(P3, P3Spawn.transform.position, Quaternion.identity);
         }
 
-        if (/*IDs.Contains(3)*/ PMScript.P4Exists)
+        if (PMScript.P4Exists)
         {
             P4Exists = true;
             Instantiate(P4, P4Spawn.transform.position, Quaternion.identity);
