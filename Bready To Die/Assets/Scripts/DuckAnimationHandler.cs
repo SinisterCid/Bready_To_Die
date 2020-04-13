@@ -10,12 +10,12 @@ public class DuckAnimationHandler : MonoBehaviour
     BreadCheck bcScript;
     CharacterMovement movementScript;
 
-    Animator animController;
+    public Animator animController;
 
     // Start is called before the first frame update
     void Start()
     {
-        animController = GetComponentInChildren<Animator>();
+        //animController = GetComponentInChildren<Animator>();
         shScript = GetComponent<SizeHandler>();
         jabScript = GetComponentInChildren<Jab>();
         damageScript = GetComponent<HandleDamage>();
