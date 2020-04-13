@@ -54,7 +54,8 @@ public class Return : MonoBehaviour
     {
         if (Input.GetButtonDown("0_Cancel"))
         {
-            SceneManager.LoadScene(0);
+            PMScript.ClearPlayers();
+            SceneManager.LoadScene(0);           
         }
 
         SetPlayersOnPodium();

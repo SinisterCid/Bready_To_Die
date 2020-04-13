@@ -93,6 +93,15 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void ClearPlayers()
+    {
+        IDs.Clear();
+        P1Exists = false;
+        P2Exists = false;
+        P3Exists = false;
+        P4Exists = false;
+    }
+
     public void StartGameplayScene()
     {
         Analytics.CustomEvent("GameStarted");

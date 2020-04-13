@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 17633287}
   - component: {fileID: 17633286}
   - component: {fileID: 17633285}
+  - component: {fileID: 17633289}
   m_Layer: 5
   m_Name: AddPlayerButton
   m_TagString: Untagged
@@ -200,17 +201,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 486975986}
-        m_MethodName: AddPlayer
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -293,6 +283,20 @@ RectTransform:
   m_AnchoredPosition: {x: -0.06, y: -93.62}
   m_SizeDelta: {x: 165.35, y: 44.82}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &17633289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17633284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1228ff307b8c342429b27b1e508db986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addPlayerButton: 1
+  myPlayerID: 1
 --- !u!1 &64435701
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +618,7 @@ GameObject:
   - component: {fileID: 81881560}
   - component: {fileID: 81881559}
   - component: {fileID: 81881558}
+  - component: {fileID: 81881561}
   m_Layer: 5
   m_Name: AddPlayerButton
   m_TagString: Untagged
@@ -706,17 +711,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 486975986}
-        m_MethodName: AddPlayer
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 111298683}
         m_MethodName: SetActive
         m_Mode: 6
@@ -775,6 +769,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81881556}
   m_CullTransparentMesh: 0
+--- !u!114 &81881561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81881556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1228ff307b8c342429b27b1e508db986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addPlayerButton: 1
+  myPlayerID: 0
 --- !u!1 &111298683
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +795,7 @@ GameObject:
   - component: {fileID: 111298687}
   - component: {fileID: 111298686}
   - component: {fileID: 111298685}
+  - component: {fileID: 111298688}
   m_Layer: 5
   m_Name: RemovePlayerButton
   m_TagString: Untagged
@@ -879,17 +888,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 486975986}
-        m_MethodName: RemovePlayer
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 81881556}
         m_MethodName: SetActive
         m_Mode: 6
@@ -948,6 +946,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111298683}
   m_CullTransparentMesh: 0
+--- !u!114 &111298688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111298683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1228ff307b8c342429b27b1e508db986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addPlayerButton: 0
+  myPlayerID: 0
 --- !u!1 &142286200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1049,7 @@ GameObject:
   - component: {fileID: 142613110}
   - component: {fileID: 142613109}
   - component: {fileID: 142613108}
+  - component: {fileID: 142613111}
   m_Layer: 5
   m_Name: RemovePlayerButton
   m_TagString: Untagged
@@ -1129,16 +1142,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 486975986}
-        m_MethodName: RemovePlayer
-        m_Mode: 3
+      - m_Target: {fileID: 142613106}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 469138711}
         m_MethodName: SetActive
@@ -1150,17 +1163,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 142613106}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &142613109
 MonoBehaviour:
@@ -1198,6 +1200,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142613106}
   m_CullTransparentMesh: 0
+--- !u!114 &142613111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142613106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1228ff307b8c342429b27b1e508db986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addPlayerButton: 0
+  myPlayerID: 3
 --- !u!1 &180097271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,6 +2121,7 @@ GameObject:
   - component: {fileID: 469138714}
   - component: {fileID: 469138713}
   - component: {fileID: 469138712}
+  - component: {fileID: 469138716}
   m_Layer: 5
   m_Name: AddPlayerButton
   m_TagString: Untagged
@@ -2173,17 +2190,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 486975986}
-        m_MethodName: AddPlayer
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -2266,6 +2272,20 @@ RectTransform:
   m_AnchoredPosition: {x: -0.06, y: -93.62}
   m_SizeDelta: {x: 165.35, y: 44.82}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &469138716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469138711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1228ff307b8c342429b27b1e508db986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addPlayerButton: 1
+  myPlayerID: 3
 --- !u!1 &484753585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,6 +2360,10 @@ MonoBehaviour:
   P3Exists: 0
   P4Exists: 0
   markerOnMouse: 0
+  P1EndWeight: 0
+  P2EndWeight: 0
+  P3EndWeight: 0
+  P4EndWeight: 0
 --- !u!4 &486975987
 Transform:
   m_ObjectHideFlags: 0
@@ -3869,6 +3893,7 @@ GameObject:
   - component: {fileID: 1276280480}
   - component: {fileID: 1276280479}
   - component: {fileID: 1276280478}
+  - component: {fileID: 1276280481}
   m_Layer: 5
   m_Name: RemovePlayerButton
   m_TagString: Untagged
@@ -3961,16 +3986,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 486975986}
-        m_MethodName: RemovePlayer
-        m_Mode: 3
+      - m_Target: {fileID: 1276280476}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 17633284}
         m_MethodName: SetActive
@@ -3982,17 +4007,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1276280476}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1276280479
 MonoBehaviour:
@@ -4030,6 +4044,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276280476}
   m_CullTransparentMesh: 0
+--- !u!114 &1276280481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276280476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1228ff307b8c342429b27b1e508db986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addPlayerButton: 0
+  myPlayerID: 1
 --- !u!1 &1279986811
 GameObject:
   m_ObjectHideFlags: 0
@@ -4215,8 +4243,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -23.945023, y: 196.95}
-  m_SizeDelta: {x: -277.09, y: -440.68}
+  m_AnchoredPosition: {x: -23.945023, y: 197.25}
+  m_SizeDelta: {x: -277.09, y: -406.09998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383435538
 MonoBehaviour:
@@ -4260,18 +4288,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1383435539}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 486975986}
-        m_MethodName: StartGameplayScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1383435539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5109,6 +5126,7 @@ GameObject:
   - component: {fileID: 1803391111}
   - component: {fileID: 1803391110}
   - component: {fileID: 1803391109}
+  - component: {fileID: 1803391112}
   m_Layer: 5
   m_Name: RemovePlayerButton
   m_TagString: Untagged
@@ -5201,16 +5219,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 486975986}
-        m_MethodName: RemovePlayer
-        m_Mode: 3
+      - m_Target: {fileID: 1803391107}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1822506868}
         m_MethodName: SetActive
@@ -5222,17 +5240,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1803391107}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1803391110
 MonoBehaviour:
@@ -5270,6 +5277,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803391107}
   m_CullTransparentMesh: 0
+--- !u!114 &1803391112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803391107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1228ff307b8c342429b27b1e508db986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addPlayerButton: 0
+  myPlayerID: 2
 --- !u!1 &1822506868
 GameObject:
   m_ObjectHideFlags: 0
@@ -5282,6 +5303,7 @@ GameObject:
   - component: {fileID: 1822506871}
   - component: {fileID: 1822506870}
   - component: {fileID: 1822506869}
+  - component: {fileID: 1822506873}
   m_Layer: 5
   m_Name: AddPlayerButton
   m_TagString: Untagged
@@ -5350,17 +5372,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 486975986}
-        m_MethodName: AddPlayer
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -5443,6 +5454,20 @@ RectTransform:
   m_AnchoredPosition: {x: -0.06, y: -93.62}
   m_SizeDelta: {x: 165.35, y: 44.82}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1822506873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822506868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1228ff307b8c342429b27b1e508db986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addPlayerButton: 1
+  myPlayerID: 2
 --- !u!1 &2007896653
 GameObject:
   m_ObjectHideFlags: 0

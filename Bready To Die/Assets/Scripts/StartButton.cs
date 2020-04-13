@@ -5,15 +5,31 @@ using UnityEngine.UI;
 
 public class StartButton : MonoBehaviour
 {
+    private Button btn;
+    private void Awake()
+    {
+        btn = GetComponent<Button>();
+        btn.onClick.AddListener(StartGame);
+    }
+
     private void Update()
     {
       if (PlayerManager.playerManager.markerOnMouse != true && PlayerManager.playerManager.IDs.Count > 1)
         {
-            GetComponent<Button>().interactable = true;
-        }
+            btn.interactable = true;
+        }   
         else
         {
-            GetComponent<Button>().interactable = false;
+            btn.interactable = false;
         }
     }
+
+    void StartGame()
+    {
+        if(btn.interactable && PlayerManager.playerManager)
+        {
+            PlayerManager.playerManager.StartGameplayScene();
+        }
+    }
+
 }
