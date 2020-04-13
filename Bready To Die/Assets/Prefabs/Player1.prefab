@@ -251,7 +251,7 @@ MonoBehaviour:
   isHit: 0
   breadPrefab: {fileID: 4838542140853250980, guid: c651482c7a70ac54e869f91e08ea2186,
     type: 3}
-  myMesh: {fileID: 0}
+  myMesh: {fileID: 2906877689464357279}
 --- !u!114 &238184243326351779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1307881dc921d418ed057b0d582a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animController: {fileID: 5553425879246446473}
+  animController: {fileID: 3127863955586739412}
 --- !u!1 &5736348151723332973
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,11 +353,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3837636923348617654}
     m_Modifications:
+    - target: {fileID: 748044747043233246, guid: 0592ade17e0186e4680f0b420c68ac54,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 876502060995864648, guid: 0592ade17e0186e4680f0b420c68ac54,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e52d0aad0fe31644d86b037ce254cd0e, type: 2}
+    - target: {fileID: 876502060995864648, guid: 0592ade17e0186e4680f0b420c68ac54,
+        type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1087302180277880067, guid: 0592ade17e0186e4680f0b420c68ac54,
         type: 3}
       propertyPath: m_Controller
@@ -408,11 +418,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e52d0aad0fe31644d86b037ce254cd0e, type: 2}
+    - target: {fileID: 1955100802599303920, guid: 0592ade17e0186e4680f0b420c68ac54,
+        type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2352947929113663604, guid: 0592ade17e0186e4680f0b420c68ac54,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e52d0aad0fe31644d86b037ce254cd0e, type: 2}
+    - target: {fileID: 2352947929113663604, guid: 0592ade17e0186e4680f0b420c68ac54,
+        type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6325171034710006378, guid: 0592ade17e0186e4680f0b420c68ac54,
         type: 3}
       propertyPath: m_Name
@@ -501,9 +521,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2629741681897269719}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &5553425879246446473 stripped
+--- !u!95 &3127863955586739412 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 7597294710653482590, guid: 0592ade17e0186e4680f0b420c68ac54,
+  m_CorrespondingSourceObject: {fileID: 1087302180277880067, guid: 0592ade17e0186e4680f0b420c68ac54,
+    type: 3}
+  m_PrefabInstance: {fileID: 2629741681897269719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &2906877689464357279 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 876502060995864648, guid: 0592ade17e0186e4680f0b420c68ac54,
     type: 3}
   m_PrefabInstance: {fileID: 2629741681897269719}
   m_PrefabAsset: {fileID: 0}
