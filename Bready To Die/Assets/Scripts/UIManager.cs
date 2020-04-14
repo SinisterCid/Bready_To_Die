@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         PCScript = GetComponent<PlayerCountManager>();
-        PMScript = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        PMScript = PlayerManager.playerManager;
         if (PCScript.P1Exists)
         {
             P1WLevel = 1;

@@ -29,7 +29,7 @@ public class Return : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PMScript = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        PMScript = PlayerManager.playerManager;
         P1Weight = PMScript.P1EndWeight;
         P2Weight = PMScript.P2EndWeight;
         P3Weight = PMScript.P3EndWeight;
